@@ -17,16 +17,17 @@
           <input type="text" id="Name" [(ngModel)]="Register.Name" name="Name" #Name="ngModel" placeholder="Nombre*" required>
 
           <div [hidden]="Name.valid || Name.pristine" class="alert alert-danger">
-            Ingresa un nombre
+            Por favor, ingresa un nombre.
           </div>
         </div>
         <div class="form-group col-sm-6">
           <input type="email" id="Email" [(ngModel)]="Register.Email" name="Email" #Email="ngModel" placeholder="Correo Electónico*"
-            required>
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
 
           <div [hidden]="Email.valid || Email.pristine" class="alert alert-danger">
-            Ingresa un correo electrónico
+            Por favor, ingresa un correo electrónico valido.
           </div>
+
         </div>
       </div>
 
@@ -41,7 +42,7 @@
             <option value="Otro">Otro</option>
           </select>
           <div [hidden]="DocumentType.valid || DocumentType.pristine" class="alert alert-danger">
-            Selecciona un tipo de documento
+            Por favor, selecciona un tipo de documento.
           </div>
         </div>
 
@@ -49,16 +50,17 @@
           <input type="text" id="DocumentNumber" [(ngModel)]="Register.DocumentNumber" name="DocumentNumber" #DocumentNumber="ngModel"
             placeholder="Número de documento*" required>
           <div [hidden]="DocumentNumber.valid || DocumentNumber.pristine" class="alert alert-danger">
-            Ingresa un correo electrónico
+            Por favor, ingresa un número de documento.
           </div>
         </div>
       </div>
 
       <div class="clearfix">
         <div class="form-group col-sm-6">
-          <input type="text" id="Phone" [(ngModel)]="Register.Phone" name="Phone" placeholder="Teléfono*" #Phone="ngModel" required>
+          <input type="text" id="Phone" [(ngModel)]="Register.Phone" name="Phone" placeholder="Teléfono*" #Phone="ngModel" (keypress)="onlyNumbers($event)"
+            required>
           <div [hidden]="Phone.valid || Phone.pristine" class="alert alert-danger">
-            Ingresa un número de teléfono
+            Por favor, ingresa un número de teléfono.
           </div>
         </div>
 
@@ -71,7 +73,7 @@
               </label>
             </div>
             <div [hidden]="AcceptTerms.valid || AcceptTerms.pristine" class="alert alert-danger">
-              Acepta los terminos y condiciones
+              Por favor, acepta los términos y condiciones.
             </div>
           </div>
           <div class="col-md-5 col-lg-4 btn-newsletter">

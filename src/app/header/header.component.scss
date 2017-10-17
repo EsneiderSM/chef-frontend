@@ -38,9 +38,11 @@ header{
             > a{
                 color: $_white;
                 padding: 3rem 1rem;
-                &:hover{
+                &:hover,
+                &:focus{
                     background-color: transparent;
                     color: $_primary;
+                    outline: none;
                     &:after{
                         background-color: $_primary;
                         content: "";
@@ -80,7 +82,9 @@ header{
                     color: $_white;
                     font-size: 1.5em;
                     padding: 2rem .3rem;
-                    &:hover{
+                    &:hover,
+                    &:focus{
+                        outline: none;
                         color: $_primary;
                     }
                 }
@@ -98,7 +102,14 @@ header{
 @media (max-width:$_break-large) {
     .navbar-site{
         .navbar-brand{
-            font-size: 2em;
+            font-size: 1.5em;
+        }
+    }
+    .navbar-nav{
+        > li{
+            > a{
+                font-size: .9em;
+            } 
         }
     }
 }
@@ -146,10 +157,9 @@ header{
 }
 
 
-@media (max-width:$_break-xsmall) {
+@media (max-width:$_break-small) {
     .navbar-site{
         .navbar-brand{
-            font-size: 1.8em;
             padding: 1.8rem 1rem;
             height: auto;
         }

@@ -37,4 +37,13 @@ export class NewsletterComponent implements OnInit {
       });
   }
 
+  //Validate numbers
+  onlyNumbers(event:any){
+    const pattern = /[0-9\+\-\ ]/;
+    let key = String.fromCharCode(event.charCode);
+    if (!pattern.test(key)) {
+      return false;
+    }
+  }
+
 }

@@ -19,6 +19,8 @@
 }
 
 .banner-brand{
+    position: relative;
+    top: -11em;
     div{
         text-align: center;
     }
@@ -43,16 +45,12 @@
     } 
 }
 
-.banner-brand{
-    margin-top: -11em;
-}
-
 .section-2{
     .back-section{
         background-image: url('~assets/img/background-section.jpg');
         background-position: center top;
         background-repeat: no-repeat;
-        padding: 6em 0;
+        padding: 6em 0 8em;
     }
     .title-section{
         margin-bottom: 1.5em;
@@ -90,7 +88,7 @@
         }
     }
     .banner-brand{
-        margin-top: -2em;
+        top: -2em;
         padding: 0 2rem;
     }
     .section-2{
@@ -117,9 +115,6 @@
         }
     }
     .section-2{
-        .back-section{
-            padding: 1rem 0;
-        }
         .paragraph-1{
             padding: 0;
         }

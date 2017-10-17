@@ -16,7 +16,7 @@ export class NewsletterService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers : headers });
 
-    return this.http.post('//chef.labagenciadigital.com/api/Newsletter', body, options)
+    return this.http.post('http://localhost:54768/api/Newsletter', body, options)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 
