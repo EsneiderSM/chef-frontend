@@ -1,0 +1,160 @@
+@import '~assets/styles/helpers/_variables.scss';
+
+header{
+    background-color: $_black;
+    padding-bottom: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top:0;
+}
+
+.navbar-site{
+    border-bottom: 1px solid $_light-white;
+    border-radius: 0;
+    margin-bottom: 0;
+    height: 80px;
+    .navbar-brand{
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 2.5em;
+        color: $_white;
+        position: relative;
+        padding: 3rem 1rem;
+        height: 80px;
+        &:after{
+            background-color: $_primary;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+        }
+    }
+    .navbar-nav{
+        > li{
+            > a{
+                color: $_white;
+                padding: 3rem 1rem;
+                &:hover{
+                    background-color: transparent;
+                    color: $_primary;
+                    &:after{
+                        background-color: $_primary;
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 1px;
+                        position: absolute;
+                        bottom: 1px;
+                        left: 0;
+                    }
+                }
+            } 
+        }
+        .active{
+            > a{
+                background-color: transparent;
+                color: $_primary;
+                &:after{
+                    background-color: $_primary;
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    bottom: 1px;
+                    left: 0;
+                }
+            }
+        }
+        .nav-networks{
+            list-style: none;
+            padding-left: 1rem;
+            li{
+                display: inline-block;
+                a{
+                    display: block;
+                    color: $_white;
+                    font-size: 1.5em;
+                    padding: 2rem .3rem;
+                    &:hover{
+                        color: $_primary;
+                    }
+                }
+            }
+        }
+    }
+    .navbar-toggle{
+        margin-top: 2rem;
+        .icon-bar{
+            background-color: $_primary;
+        }
+    } 
+}
+
+@media (max-width:$_break-large) {
+    .navbar-site{
+        .navbar-brand{
+            font-size: 2em;
+        }
+    }
+}
+
+@media (max-width:$_break-medium) {
+    .navbar-site{
+        height: auto;
+        .navbar-header {
+            float: none;
+            .navbar-right {
+                float: none !important;
+            }
+            .navbar-toggle {
+                display: block;
+            }
+        }
+        
+        .navbar-collapse{
+            border: 0;
+            box-shadow: none;
+        }
+        .navbar-nav{
+            float: none!important;
+            margin-top: 7.5px;
+            > li{
+                float: none;
+                > a{
+                    padding: 2rem 1rem;
+                    text-align: center;
+                } 
+            }
+            
+            .nav-networks{
+                text-align: center;
+            }
+        }
+    }
+
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
+
+
+@media (max-width:$_break-xsmall) {
+    .navbar-site{
+        .navbar-brand{
+            font-size: 1.8em;
+            padding: 1.8rem 1rem;
+            height: auto;
+        }
+        .navbar-toggle{
+            margin-top: 1rem;
+        } 
+    }
+}

@@ -1,0 +1,85 @@
+<div class="newsletter">
+  <div class="line-title"></div>
+  <div class="content-page">
+
+    <div class="clearfix">
+      <div class="col-xs-12">
+        <h2>SUSCRÍBETE A NUESTRO NEWSLETTER
+          <span>I</span>
+        </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut elementum dolor. </p>
+      </div>
+    </div>
+
+    <form (ngSubmit)="onSubmit(newsletterForm)" #newsletterForm="ngForm">
+      <div class="clearfix">
+        <div class="form-group col-sm-6">
+          <input type="text" id="Name" [(ngModel)]="Register.Name" name="Name" #Name="ngModel" placeholder="Nombre*" required>
+
+          <div [hidden]="Name.valid || Name.pristine" class="alert alert-danger">
+            Ingresa un nombre
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <input type="email" id="Email" [(ngModel)]="Register.Email" name="Email" #Email="ngModel" placeholder="Correo Electónico*"
+            required>
+
+          <div [hidden]="Email.valid || Email.pristine" class="alert alert-danger">
+            Ingresa un correo electrónico
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix">
+        <div class="form-group col-sm-6">
+          <!--<input type="text" placeholder="Tipo de documento">-->
+          <select id="TypeDocument" [(ngModel)]="Register.TypeDocument" name="TypeDocument" #TypeDocument="ngModel" required>
+            <option value="">Tipo de documento*</option>
+            <option value="Cédula">Cédula</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Nit">Nit</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <div [hidden]="TypeDocument.valid || TypeDocument.pristine" class="alert alert-danger">
+            Selecciona un tipo de documento
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <input type="text" id="Document" [(ngModel)]="Register.Document" name="Document" #Document="ngModel" placeholder="Número de documento*"
+            required>
+          <div [hidden]="Document.valid || Document.pristine" class="alert alert-danger">
+            Ingresa un correo electrónico
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix">
+        <div class="form-group col-sm-6">
+          <input type="text" id="Phone" [(ngModel)]="Register.Phone" name="Phone" placeholder="Teléfono*" #Phone="ngModel" required>
+          <div [hidden]="Phone.valid || Phone.pristine" class="alert alert-danger">
+            Ingresa un número de teléfono
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6 ctn-terms">
+          <div class="col-md-7 col-lg-8 input-terms">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="Terms" [(ngModel)]="Register.Terms" name="Terms" #Terms="ngModel" required>
+                <a href="">Acepto términos y condiciones</a>
+              </label>
+            </div>
+            <div [hidden]="Terms.valid || Terms.pristine" class="alert alert-danger">
+              Acepta los terminos y condiciones
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-4 btn-newsletter">
+            <button type="submit" class="btn btn-primary" [disabled]="!newsletterForm.form.valid">Suscribrime</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

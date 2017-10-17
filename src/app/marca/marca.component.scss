@@ -1,0 +1,119 @@
+@import '~assets/styles/helpers/_variables.scss';
+
+.header-section{
+    background-color: $_black;
+    padding: 2em 0 3em;
+    margin-top: 9rem;
+    .intro-section{
+        color: $_white;
+    }
+}
+
+.banner-brand{
+    div{
+        text-align: center;
+    }
+}
+
+.breadcrumb{
+    background-color: $_black;
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            display: inline-block;
+            color: $_white;
+            a{
+                color: $_white;
+                &:hover{
+                    color: $_primary;
+                }
+            }
+        }
+    } 
+}
+
+.banner-brand{
+    margin-top: -10em;
+}
+
+.section-2{
+    .back-section{
+        background-image: url('../../assets/img/background-section.jpg');
+        background-position: center top;
+        background-repeat: no-repeat;
+        padding: 6em 0;
+    }
+    .title-section{
+        margin-bottom: 1.5em;
+    }
+    .paragraph-1,
+    .paragraph-2{
+        color: $_white;
+    }
+    .paragraph-1{
+        p{
+            margin-bottom: 2em;
+        }
+        .img-section-2{
+            text-align: center;
+        }
+    }
+    .paragraph-3{
+        margin-top: 5em;
+    }
+}
+
+@media (max-width:$_break-large) {
+    .section-2{
+        .back-section{
+            padding: 3em 0;
+        }
+    }
+}
+
+@media (max-width:$_break-medium) {
+    .banner-brand{
+        margin-top: -2em;
+        padding: 0 2rem;
+    }
+    .section-2{
+        .paragraph-3{
+            margin-top: 8em;
+        }
+    }
+}
+
+@media (max-width:$_break-small) {
+    .header-section{
+        padding: 0 0 3em;
+        margin-top: 6rem;
+    }
+    .breadcrumb{
+        margin-bottom: 1rem;
+        ul{
+            li{
+                a{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .section-2{
+        .back-section{
+            padding: 1rem 0;
+        }
+        .paragraph-1{
+            padding: 0;
+        }
+        .paragraph-2{
+            color: $_black;
+            padding: 2rem 0;
+        }
+        .paragraph-3{
+            margin-top: 0;
+            padding: 0;
+        }
+    }
+}

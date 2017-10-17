@@ -1,0 +1,16 @@
+@import '~assets/styles/helpers/_variables.scss';
+
+footer{
+    background-color: $_black;
+    padding: 3.5em;
+    span{
+        color: $_white;
+    }
+}
+
+@media (max-width:$_break-small) {
+    footer{
+        text-align: center;
+        padding: 2em;
+    }
+}
