@@ -12,14 +12,16 @@ import { NewsletterService } from '../service/newsletter.service';
 export class NewsletterComponent implements OnInit {
 
   Register = new NewsletterModel();
+  sendForm = false;
+
   constructor(private newsletterService:NewsletterService){}
 
-  
   ngOnInit() {}
 
   onSubmit(form : NgForm){
     this.newsletterService.createRegister(this.Register);
-    form.resetForm();
+    this.sendForm = true;
+    //form.resetForm();
 
   }
 

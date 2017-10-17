@@ -23,11 +23,15 @@
                 .btn{
                     width: 100%;
                 }
+                
             }
             .alert-danger{
                 padding: .5rem 1rem;
                 border-radius: 0;
                 margin-bottom: 0;
+            }
+            .form-loader{
+                text-align: center;
             }
         }
     }
