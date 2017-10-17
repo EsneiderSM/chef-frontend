@@ -33,22 +33,22 @@
       <div class="clearfix">
         <div class="form-group col-sm-6">
           <!--<input type="text" placeholder="Tipo de documento">-->
-          <select id="TypeDocument" [(ngModel)]="Register.TypeDocument" name="TypeDocument" #TypeDocument="ngModel" required>
+          <select id="DocumentType" [(ngModel)]="Register.DocumentType" name="DocumentType" #DocumentType="ngModel" required>
             <option value="">Tipo de documento*</option>
             <option value="Cédula">Cédula</option>
             <option value="Pasaporte">Pasaporte</option>
             <option value="Nit">Nit</option>
             <option value="Otro">Otro</option>
           </select>
-          <div [hidden]="TypeDocument.valid || TypeDocument.pristine" class="alert alert-danger">
+          <div [hidden]="DocumentType.valid || DocumentType.pristine" class="alert alert-danger">
             Selecciona un tipo de documento
           </div>
         </div>
 
         <div class="form-group col-sm-6">
-          <input type="text" id="Document" [(ngModel)]="Register.Document" name="Document" #Document="ngModel" placeholder="Número de documento*"
-            required>
-          <div [hidden]="Document.valid || Document.pristine" class="alert alert-danger">
+          <input type="text" id="DocumentNumber" [(ngModel)]="Register.DocumentNumber" name="DocumentNumber" #DocumentNumber="ngModel"
+            placeholder="Número de documento*" required>
+          <div [hidden]="DocumentNumber.valid || DocumentNumber.pristine" class="alert alert-danger">
             Ingresa un correo electrónico
           </div>
         </div>
@@ -66,23 +66,31 @@
           <div class="col-md-7 col-lg-8 input-terms">
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="Terms" [(ngModel)]="Register.Terms" name="Terms" #Terms="ngModel" required>
+                <input type="checkbox" id="AcceptTerms" [(ngModel)]="Register.AcceptTerms" name="AcceptTerms" #AcceptTerms="ngModel" required>
                 <a href="">Acepto términos y condiciones</a>
               </label>
             </div>
-            <div [hidden]="Terms.valid || Terms.pristine" class="alert alert-danger">
+            <div [hidden]="AcceptTerms.valid || AcceptTerms.pristine" class="alert alert-danger">
               Acepta los terminos y condiciones
             </div>
           </div>
           <div class="col-md-5 col-lg-4 btn-newsletter">
-            <button type="submit" class="btn btn-primary" [disabled]="!newsletterForm.form.valid">Suscribrime</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!newsletterForm.form.valid || sendForm">Suscribrime</button>
           </div>
         </div>
 
       </div>
-      
-      <div *ngIf="sendForm" class="form-loader">
-        <img src="assets/img/loader.gif" alt="Marca">
+
+      <div class="clearfix">
+        <div class="col-xs-12">
+          <div *ngIf="sendForm" class="form-loader">
+            <img src="assets/img/loader.gif" alt="Marca">
+          </div>
+
+          <div *ngIf="registerSuccess" class="alert alert-success" role="alert">
+            <strong>¡Gracias!</strong> por suscribirte.
+          </div>
+        </div>
       </div>
 
     </form>

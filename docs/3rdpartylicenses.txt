@@ -85,6 +85,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+@angular/http@4.4.5 MIT
+
 script-loader@0.7.2 MIT
 Copyright JS Foundation and other contributors
 

@@ -2,9 +2,9 @@
 export class NewsletterModel{
     public Name:string;
     public Email:string;
-    public TypeDocument:string = "";
-    public Document:string;
+    public DocumentType:string = "";
+    public DocumentNumber:string;
     public Phone:string;
-    public Terms:boolean;
+    public AcceptTerms:boolean;
     constructor(){}
 }

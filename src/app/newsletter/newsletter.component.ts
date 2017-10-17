@@ -11,18 +11,30 @@ import { NewsletterService } from '../service/newsletter.service';
 
 export class NewsletterComponent implements OnInit {
 
-  Register = new NewsletterModel();
-  sendForm = false;
+  Register:NewsletterModel = new NewsletterModel();
+  sendForm:boolean = false;
+  registerSuccess:boolean = false;
 
   constructor(private newsletterService:NewsletterService){}
 
   ngOnInit() {}
 
+  //Btn submit
   onSubmit(form : NgForm){
-    this.newsletterService.createRegister(this.Register);
-    this.sendForm = true;
-    //form.resetForm();
 
+    this.sendForm = true;
+    this.newsletterService.createRegister(this.Register)
+      .subscribe(res =>{
+        
+        this.sendForm = false;
+        this.registerSuccess = true;
+        form.resetForm();
+
+        setTimeout(() => { this.registerSuccess = !this.registerSuccess }, 3000);
+
+      }, error =>{
+        console.log(error)
+      });
   }
 
 }
